@@ -17,4 +17,30 @@ class StatisticServiceTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void shouldAverage() {
+
+        assertEquals(15, service.average(array));
+    }
+
+    @Test
+    void shouldReturnMonthNumberWithMax() {
+        assertEquals(8, service.withMax(array));
+    }
+
+    @Test
+    void shouldReturnMonthNumberWithMin() {
+        assertEquals(9, service.withMin(array));
+    }
+
+    @Test
+    void shouldReturnMonthCountWithMaxThanAverage() {
+        assertEquals(5, service.moreThanAverage(array));
+    }
+
+    @Test
+    void shouldReturnMonthCountWithMinThanAverage() {
+        assertEquals(5, service.lessThanAverage(array));
+    }
+
 }
